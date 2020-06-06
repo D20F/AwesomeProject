@@ -1,22 +1,23 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
+
 import Test from './src/view/Test'
+
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import reducer from './src/redux/reducers'
+const store = createStore(
+  reducer
+)
 
 
 const App = () => {
   return (
-    <>
-    <Test/>
-      
-    </>
+    <Provider store={store}>
+      <Test />
+    </Provider>
   );
 };
 
 export default App;
+
+
