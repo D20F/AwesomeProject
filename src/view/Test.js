@@ -27,8 +27,10 @@ class App extends React.Component {
     w: 100,
     h: 100,
   };
+ 
+
   componentDidMount(){
-    console.log(this.props);
+
   }
   _onPress = () => {
     // Animate the update
@@ -41,7 +43,6 @@ class App extends React.Component {
     this.props.inclick();
     console.log(this.props);
   }
-
 
   render() {
     const { APP_UI_TREE } = this.props;

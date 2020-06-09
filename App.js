@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Test from './src/view/Test'
+import Chat from './src/view/Chat'
 
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
@@ -13,7 +14,8 @@ const store = createStore(
 const App = () => {
   return (
     <Provider store={store}>
-      <Test />
+      {/* <Test /> */}
+      <Chat />
     </Provider>
   );
 };
