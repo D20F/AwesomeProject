@@ -18,3 +18,11 @@
     ├─ views                vue页面文件夹
     ├─ app                  vue app主页面
     └─ main                 vue入口JS文件
+
+
+
+
+
+
+    index主路由 
+    side 抽屉    tap滑动   

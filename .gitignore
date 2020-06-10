@@ -38,8 +38,10 @@ yarn-error.log
 # BUCK
 buck-out/
 \.buckd/
-*.keystore
-!debug.keystore
+
+秘钥暂时不屏蔽推送
+# *.keystore
+# !debug.keystore
 
 # fastlane
 #
