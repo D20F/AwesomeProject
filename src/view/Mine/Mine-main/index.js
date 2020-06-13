@@ -4,15 +4,14 @@ import {
   LayoutAnimation,
   Text,
   TouchableOpacity,
-  StyleSheet,
   View,
 } from 'react-native';
 
 import { connect } from 'react-redux'
 
-import {pursecardFun} from '../redux/actions'
+import { pursecardFun } from '../../../redux/actions'
 
-
+import styles from './css'
 
 const { UIManager } = NativeModules;
 
@@ -46,6 +45,7 @@ class App extends React.Component {
 
   render() {
     const { APP_UI_TREE } = this.props;
+    const { navigation } = this.props;
     // APP_UI_TREE.SHOW_PURSECARD
     return (
       <View style={styles.container}>
@@ -60,33 +60,17 @@ class App extends React.Component {
             <Text style={styles.buttonText}>{APP_UI_TREE.SHOW_PURSECARD}</Text>
           </View>
         </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Homes')}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>{APP_UI_TREE.SHOW_PURSECARD}</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 200,
-    height: 200,
-    backgroundColor: 'red',
-  },
-  button: {
-    backgroundColor: 'black',
-    paddingHorizontal: 20,
-    paddingVertical: 15,
-    marginTop: 15,
-  },
-  buttonText: {
-    color: '#fff',
-    fontWeight: 'bold',
-  },
-});
+
 const mapDispatchToProps = dispatch => {
   return {
     inclick: () => dispatch(pursecardFun('CCC')),

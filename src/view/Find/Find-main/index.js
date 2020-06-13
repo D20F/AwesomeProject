@@ -60,7 +60,7 @@ class App extends React.Component {
             <Text style={styles.buttonText}>{APP_UI_TREE.SHOW_PURSECARD}</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('MFind')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Homes')}>
           <View style={styles.button}>
             <Text style={styles.buttonText}>{APP_UI_TREE.SHOW_PURSECARD}</Text>
           </View>

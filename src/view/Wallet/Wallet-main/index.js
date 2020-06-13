@@ -45,6 +45,7 @@ class App extends React.Component {
 
   render() {
     const { APP_UI_TREE } = this.props;
+    const { navigation } = this.props;
     // APP_UI_TREE.SHOW_PURSECARD
     return (
       <View style={styles.container}>
@@ -55,6 +56,11 @@ class App extends React.Component {
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={this._handleAddTodo}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>{APP_UI_TREE.SHOW_PURSECARD}</Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Homes')}>
           <View style={styles.button}>
             <Text style={styles.buttonText}>{APP_UI_TREE.SHOW_PURSECARD}</Text>
           </View>
