@@ -3,26 +3,26 @@ import {
   } from 'react-native';
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    box: {
-      width: 200,
-      height: 200,
-      backgroundColor: 'red',
-    },
-    button: {
-      backgroundColor: 'black',
-      paddingHorizontal: 20,
-      paddingVertical: 15,
-      marginTop: 15,
-    },
     buttonText: {
       color: '#fff',
       fontWeight: 'bold',
     },
+    container: {
+      flex: 1,
+      // marginHorizontal: 16
+    },
+    item: {
+      backgroundColor: "#f9c2ff",
+      padding: 20,
+      marginVertical: 8
+    },
+    header: {
+      fontSize: 32,
+      backgroundColor: "#fff"
+    },
+    title: {
+      fontSize: 24
+    }
   });
 
   export default styles

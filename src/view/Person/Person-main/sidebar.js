@@ -16,15 +16,22 @@ class App extends React.Component {
       this.state={
 
       }
-  that = this
   }
 
-
+  _clickIndex = () =>{
+    const { sectionObject } = this.props;
+    console.log(sectionObject)
+    // sectionObject.scrollToLocation({
+    //   sectionIndex: 3,
+    //   itemIndex: 3,
+    //   viewOffset: 0,
+    // })
+  }
   renderLetters(letter, index) {
       return (
-          <TouchableOpacity key={index} activeOpacity={0.6} onPress={()=>{}}>
-              <View style={styles.letter}>
-                  <Text style={styles.letterText}>{letter}</Text>
+          <TouchableOpacity key={index} activeOpacity={0.6} onPress={this._clickIndex}>
+              <View >
+                  <Text >{letter}</Text>
               </View>
           </TouchableOpacity>
       )
@@ -32,8 +39,8 @@ class App extends React.Component {
 
   render() {
       return (
-          <View style={{height: Dimensions.get('window').height,marginBottom:10}}>
-              <View style={styles.letters}>
+          <View style={{width:10, height: Dimensions.get('window').height,marginBottom:10}}>
+              <View >
                   {letters.map((letter, index) => this.renderLetters(letter, index))}
               </View>
           </View>

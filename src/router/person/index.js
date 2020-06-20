@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import SideDrawer from '../../view/Side/Side-drawer/index'
+import PersonMain from '../../view/Person/Person-main/index'
 
 
 const Stack = createStackNavigator();
@@ -9,7 +9,7 @@ const Stack = createStackNavigator();
 function App() {
   return (
       <Stack.Navigator>
-        <Stack.Screen name="Homes" component={SideDrawer} />
+        <Stack.Screen name="PersonMain" component={PersonMain} />
       </Stack.Navigator>
   )
 }
