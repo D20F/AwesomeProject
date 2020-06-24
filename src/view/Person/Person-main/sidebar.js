@@ -18,18 +18,14 @@ class App extends React.Component {
       }
   }
 
-  _clickIndex = () =>{
-    const { sectionObject } = this.props;
-    console.log(sectionObject)
-    // sectionObject.scrollToLocation({
-    //   sectionIndex: 3,
-    //   itemIndex: 3,
-    //   viewOffset: 0,
-    // })
+  // 给父组件传递索引
+  _clickIndex = (index) =>{
+    this.props._clickIndex(index);
   }
+
   renderLetters(letter, index) {
       return (
-          <TouchableOpacity key={index} activeOpacity={0.6} onPress={this._clickIndex}>
+          <TouchableOpacity key={index} activeOpacity={0.6} onPress={()=>{this._clickIndex(index)}}>
               <View >
                   <Text >{letter}</Text>
               </View>

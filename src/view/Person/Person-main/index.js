@@ -57,9 +57,10 @@ class App extends React.Component {
       super(props);
       this.state={
         refreshing:false,
-        sectionObject:''
+
       }
   }
+  // 刷新函数
   _onRefresh = () =>{
     // 设置ture 让loading出来
     this.setState({refreshing:true});
@@ -67,23 +68,39 @@ class App extends React.Component {
     // () => {
       this.setState({refreshing:false})
     // };
-    console.log(this.state.sectionObject)
+  
   }
+  // 子组件侧边栏滚动点击
+  _clickIndex = (index) =>{
+    this._assignment.scrollToLocation({
+      itemIndex: index,
+      viewOffset: 0,
+    })
+  }
+
+  
+  
+  
 
   render() {
     return (
       <View style={{flex:1, flexDirection: 'row'}}>
           <SectionList
             ref={(ref) =>{
-              this.setState({sectionObject:ref})
+              this._assignment = ref;
             }}
             style={styles.container}
+              // section 列表数据
               sections={DATA}
+              // keyExtractor 自动生成唯一key值
               keyExtractor={(item, index) => item + index}
+              //renderItem 渲染主体组件
               renderItem={({ item }) => <Item title={item} />}
+              //renderSectionHeader 渲染title组件
               renderSectionHeader={({ section: { title } }) => (
                 <Text style={styles.header}>{title}</Text>
               )}
+              //ListEmptyComponent 定义无数据显示
               ListEmptyComponent={() => (
                 <Text style={styles.header}>快去添加好友吧</Text>
               )}
@@ -94,7 +111,7 @@ class App extends React.Component {
        
 
             />
-            {/* <Sidebar sectionObject = {this.coss}></Sidebar> */}
+            <Sidebar _clickIndex={this._clickIndex}></Sidebar>
           </View>
       );
   }
